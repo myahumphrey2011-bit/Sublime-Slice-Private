@@ -1,107 +1,157 @@
+/* Base */
 body{
-font-family: Inter, sans-serif;
-background:#FFF6F0;
-margin:0;
+    font-family: Inter, sans-serif;
+    background:#FFF6F0;
+    margin:0;
 }
 
 .app{
-display:flex;
-height:100vh;
+    display:flex;
+    height:100vh;
 }
 
+/* Sidebar */
 .sidebar{
-width:250px;
-background:#6B3E26;
-color:white;
-padding:20px;
-overflow-y:auto;
+    width:260px;
+    background:#6B3E26;
+    color:white;
+    padding:20px;
+    overflow-y:auto;
 }
 
 .sidebar h1{
-font-family: serif;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 }
 
 .sidebar button{
-display:block;
-width:100%;
-margin:5px 0;
-padding:8px;
-border:none;
-background:#D8A47F;
-color:white;
-border-radius:6px;
-cursor:pointer;
+    display:block;
+    width:100%;
+    margin:5px 0;
+    padding:10px;
+    border:none;
+    background:#D8A47F;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition: all 0.2s;
 }
 
 .sidebar button:hover{
-background:#C48C66;
+    background:#C48C66;
 }
 
+/* Main area */
 main{
-flex:1;
-padding:30px;
-overflow-y:auto;
+    flex:1;
+    padding:30px;
+    overflow-y:auto;
 }
 
+/* Pages */
 .page{
-display:none;
+    display:none;
 }
 
 .page.active{
-display:block;
+    display:block;
 }
 
+/* Dashboard cards */
 .cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:20px;
 }
 
 .card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
-font-size:18px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    font-size:18px;
+    cursor:pointer;
+    text-align:center;
+    transition: all 0.2s;
 }
 
-textarea{
-width:100%;
-height:100px;
-margin:10px 0;
-padding:10px;
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-input{
-padding:8px;
-margin:5px;
+/* Inputs & textareas */
+input, textarea{
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    font-size:16px;
+    transition: all 0.2s;
+    outline:none;
 }
 
+input:focus, textarea:focus{
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
 button{
-padding:8px 12px;
-margin:5px;
-background:#D8A47F;
-border:none;
-border-radius:6px;
-color:white;
-cursor:pointer;
+    padding:10px 16px;
+    margin:5px 0;
+    background:#D8A47F;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition: all 0.2s;
 }
 
+button:hover{
+    background:#C48C66;
+}
+
+/* Lists */
 ul{
-list-style:none;
-padding:0;
+    list-style:none;
+    padding:0;
 }
 
 li{
-background:white;
-padding:10px;
-margin:5px 0;
-border-radius:6px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+    background:white;
+    padding:10px;
+    margin:5px 0;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+    transition: all 0.2s;
+}
+
+li:hover{
+    transform: translateX(2px);
 }
 
 .inv-buttons button{
-margin-left:5px;
+    margin-left:5px;
+}
+
+/* Labels */
+label{
+    font-weight:600;
+    display:block;
+    margin-top:15px;
+}
+
+/* Profit output */
+#profitResult{
+    margin-top:10px;
+    font-weight:600;
+    font-size:16px;
 }
