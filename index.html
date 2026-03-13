@@ -14,7 +14,6 @@
 <h1>🍪 Baking Vault</h1>
 
 <nav>
-
 <button data-page="dashboard">Dashboard</button>
 
 <h3>Recipes</h3>
@@ -47,246 +46,230 @@
 
 </aside>
 
-
 <main id="content">
 
+<!-- Dashboard -->
 <section id="dashboard" class="page active">
-
 <h2>Dashboard</h2>
-
 <div class="cards">
-
-<div class="card">🍪 Recipes</div>
-<div class="card">🧪 Testing Lab</div>
-<div class="card">🍓 Flavor Ideas</div>
-<div class="card">📦 Inventory</div>
-<div class="card">📱 Content Studio</div>
-<div class="card">📊 Analytics</div>
-
+<div class="card" data-page="recipes">🍪 Recipe Vault</div>
+<div class="card" data-page="testing">🧪 Testing Lab</div>
+<div class="card" data-page="flavors">🍓 Flavor Ideas</div>
+<div class="card" data-page="flavorlab">🧩 Flavor Combos</div>
+<div class="card" data-page="signature">🪄 Signature Cookies</div>
+<div class="card" data-page="inventory">📦 Inventory</div>
+<div class="card" data-page="content">📱 Content Studio</div>
+<div class="card" data-page="photo">📸 Photography Guide</div>
+<div class="card" data-page="drops">📅 Drop Planning</div>
+<div class="card" data-page="analytics">📊 Analytics</div>
 </div>
-
 </section>
 
-
+<!-- Recipe Vault -->
 <section id="recipes" class="page">
-
 <h2>Recipe Vault</h2>
+<label for="recipeTitle">Recipe Name (Example: Brown Butter Chocolate Chip)</label>
+<input id="recipeTitle" placeholder="e.g., Brown Butter Chocolate Chip">
 
-<input id="recipeTitle" placeholder="Recipe name">
-
-<textarea id="recipeText" placeholder="Ingredients, bake temp, notes"></textarea>
+<label for="recipeText">Ingredients, Bake Temp, Notes</label>
+<textarea id="recipeText">Ingredients:
+- Butter 115g
+- Brown sugar 100g
+- White sugar 60g
+- Egg 1 + yolk 1
+Bake: 350°F, 12 min
+Notes: Chill 24h for thicker cookies</textarea>
 
 <button onclick="saveRecipe()">Save Recipe</button>
-
 <ul id="recipeList"></ul>
-
 </section>
 
-
+<!-- Testing Lab -->
 <section id="testing" class="page">
-
 <h2>Recipe Testing Lab</h2>
-
-<textarea id="testEntry" placeholder="Log a recipe experiment"></textarea>
-
+<label for="testEntry">Log a Recipe Experiment</label>
+<textarea id="testEntry">Recipe: Brown Butter Chocolate Chip
+Batch #5
+Changes: Added 1 egg yolk
+Chill: 48h
+Result: Chewier center, slightly thicker
+Rating: 9/10</textarea>
 <button onclick="saveTest()">Save</button>
-
 <ul id="testList"></ul>
-
 </section>
 
-
+<!-- Signature Cookie Lab -->
 <section id="signature" class="page">
-
 <h2>Signature Cookie Lab</h2>
-
-<textarea id="signatureIdea" placeholder="Develop your signature cookie"></textarea>
-
+<label for="signatureIdea">Signature Cookie Development</label>
+<textarea id="signatureIdea">Idea: Pistachio White Chocolate
+Goal: Soft + chewy center
+Filling: Pistachio cream
+Topping: Crushed pistachios
+Status: Testing</textarea>
 <button onclick="saveSignature()">Save</button>
-
 <ul id="signatureList"></ul>
-
 </section>
 
-
+<!-- Flavor Vault -->
 <section id="flavors" class="page">
-
 <h2>Flavor Idea Vault</h2>
-
-<input id="flavorInput" placeholder="Flavor idea">
-
+<label for="flavorInput">New Flavor Idea</label>
+<input id="flavorInput" placeholder="e.g., Raspberry Cheesecake">
 <button onclick="saveFlavor()">Add</button>
-
 <ul id="flavorList"></ul>
-
 </section>
 
-
+<!-- Flavor Combination Lab -->
 <section id="flavorlab" class="page">
-
 <h2>Flavor Combination Lab</h2>
-
-<textarea id="comboInput" placeholder="Base, filling, topping combination"></textarea>
-
+<label for="comboInput">Base, Filling, Topping Combination</label>
+<textarea id="comboInput">Base: Chocolate
+Filling: Caramel
+Topping: Sea salt</textarea>
 <button onclick="saveCombo()">Save</button>
-
 <ul id="comboList"></ul>
-
 </section>
 
-
+<!-- Idea Dump -->
 <section id="ideas" class="page">
-
 <h2>Idea Dump</h2>
-
-<textarea id="ideaInput"></textarea>
-
+<label for="ideaInput">Brainstorm / Random Ideas</label>
+<textarea id="ideaInput">Mini cookie boxes
+Cookie croissant
+Holiday seasonal cookie</textarea>
 <button onclick="saveIdea()">Save</button>
-
 <ul id="ideaList"></ul>
-
 </section>
 
-
+<!-- Cost & Pricing -->
 <section id="pricing" class="page">
-
 <h2>Cost & Pricing Calculator</h2>
-
-<input id="cost" placeholder="Batch Cost">
-
-<input id="yield" placeholder="Cookies per batch">
-
-<input id="price" placeholder="Selling price">
-
-<button onclick="calculateProfit()">Calculate</button>
-
+<label for="cost">Batch Cost ($)</label>
+<input id="cost" placeholder="e.g., 10.50">
+<label for="yield">Cookies per batch</label>
+<input id="yield" placeholder="e.g., 18">
+<label for="price">Selling price per cookie ($)</label>
+<input id="price" placeholder="e.g., 4">
+<button onclick="calculateProfit()">Calculate Profit</button>
 <p id="profitResult"></p>
-
 </section>
 
-
+<!-- Inventory Tracker -->
 <section id="inventory" class="page">
-
 <h2>Inventory Tracker</h2>
-
-<input id="itemName" placeholder="Ingredient name">
-
-<input id="itemQty" placeholder="Quantity">
-
+<label for="itemName">Ingredient Name</label>
+<input id="itemName" placeholder="e.g., Flour">
+<label for="itemQty">Quantity</label>
+<input id="itemQty" placeholder="e.g., 5">
 <button onclick="addItem()">Add Item</button>
-
 <ul id="inventoryList"></ul>
-
 </section>
 
-
+<!-- Packaging -->
 <section id="packaging" class="page">
-
 <h2>Packaging & Supplies</h2>
-
-<textarea id="packagingInput"></textarea>
-
+<label for="packagingInput">Log Packaging / Supplies</label>
+<textarea id="packagingInput">Boxes: 30
+Stickers: 120
+Parchment: 2 rolls</textarea>
 <button onclick="savePackaging()">Save</button>
-
 <ul id="packagingList"></ul>
-
 </section>
 
-
+<!-- Content Studio -->
 <section id="content" class="page">
-
 <h2>Content Idea Studio</h2>
-
-<textarea id="contentInput"></textarea>
-
+<label for="contentInput">Video / Social Media Ideas</label>
+<textarea id="contentInput">Hook: Watch this cookie split open
+Idea: Dough pull ASMR video</textarea>
 <button onclick="saveContent()">Save</button>
-
 <ul id="contentList"></ul>
-
 </section>
 
-
+<!-- Photography Guide -->
 <section id="photo" class="page">
-
 <h2>Photography Setup Guide</h2>
-
-<textarea id="photoInput"></textarea>
-
+<label for="photoInput">Notes / Setup</label>
+<textarea id="photoInput">Lighting: Window light 10am
+Angle: 45°
+Background: Marble slab
+Props: Wooden board</textarea>
 <button onclick="savePhoto()">Save</button>
-
 <ul id="photoList"></ul>
-
 </section>
 
-
+<!-- Drop Planning -->
 <section id="drops" class="page">
-
 <h2>Drop Planning</h2>
-
-<textarea id="dropInput"></textarea>
-
+<label for="dropInput">Plan Your Next Drop</label>
+<textarea id="dropInput">Drop #12
+Cookies:
+Chocolate Chip
+Strawberry Cheesecake
+Churro
+Biscoff Stuffed</textarea>
 <button onclick="saveDrop()">Save</button>
-
 <ul id="dropList"></ul>
-
 </section>
 
-
+<!-- Analytics -->
 <section id="analytics" class="page">
-
 <h2>Data & Analytics</h2>
-
-<textarea id="analyticsInput"></textarea>
-
+<label for="analyticsInput">Track Performance</label>
+<textarea id="analyticsInput">Drop #12
+Revenue: $380
+Sold out: 45min
+Top Seller: Strawberry Cheesecake</textarea>
 <button onclick="saveAnalytics()">Save</button>
-
 <ul id="analyticsList"></ul>
-
 </section>
 
-
+<!-- Baking Science Notes -->
 <section id="science" class="page">
-
 <h2>Baking Science Notes</h2>
+<label for="scienceInput">Techniques, Notes, Observations</label>
+<textarea id="scienceInput">Butter types:
+- Softened
+- Melted
+- Browned
 
-<textarea id="scienceInput"></textarea>
-
+Dough Chilling:
+- 1h
+- Overnight
+- 48h</textarea>
 <button onclick="saveScience()">Save</button>
-
 <ul id="scienceList"></ul>
-
 </section>
 
-
+<!-- Learning Library -->
 <section id="learning" class="page">
-
 <h2>Learning Library</h2>
-
-<textarea id="learningInput"></textarea>
-
+<label for="learningInput">Articles, Videos, Guides</label>
+<textarea id="learningInput">Baking Science Article Links:
+- Spread control techniques
+- Brown butter tips</textarea>
 <button onclick="saveLearning()">Save</button>
-
 <ul id="learningList"></ul>
-
 </section>
 
-
+<!-- Business Systems -->
 <section id="systems" class="page">
-
 <h2>Business Systems</h2>
-
-<textarea id="systemsInput"></textarea>
-
+<label for="systemsInput">Procedures, SOPs, Workflow</label>
+<textarea id="systemsInput">Weekly Bake Schedule:
+Monday: Dough
+Tuesday: Chill
+Wednesday: Bake
+Thursday: Decorate
+Friday: Drop</textarea>
 <button onclick="saveSystems()">Save</button>
-
 <ul id="systemsList"></ul>
-
 </section>
 
 </main>
 </div>
 
 <script src="app.js"></script>
-
 </body>
 </html>
